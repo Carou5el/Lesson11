@@ -6,6 +6,11 @@ import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
+//        Task1();
+        Task2();
+    }
+
+    private static void Task1() {
         ChangePosition cp = new ChangePosition();
 
         String[] strArr = {"dog", "cat", "frog", "cow", "owl"};
@@ -31,6 +36,22 @@ public class Main {
         while(iterator.hasNext())   {
             System.out.println(iterator.next());
         }
+    }
 
+    private static void Task2() {
+        Apple app = new Apple();
+        Orange oran = new Orange();
+
+        Box<Apple> boxApple = new Box<>(app.getWeigth());
+        Box<Apple> boxApple2 = new Box<>(app.getWeigth());
+        Box<Orange> boxOrange = new Box<>(oran.getWeigth());
+
+        boxApple.put(13);
+        boxOrange.put(10);
+
+        boxApple.changeBox(boxApple2, 10);
+        System.out.println(boxApple.compare(boxApple2));
+        System.out.printf("Weight of box for apples = %.2f\n", boxApple.getWeight());
+        System.out.printf("Weight of box for apples = %.2f\n", boxApple2.getWeight());
     }
 }
