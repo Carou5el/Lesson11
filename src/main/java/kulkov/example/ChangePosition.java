@@ -8,8 +8,8 @@ public class ChangePosition<T> {
 
     public void changePosition(T[] inputArray, int changeFrom, int changeTo) {
         T tempVar = inputArray[changeFrom];
-        inputArray[changeFrom] = inputArray[changeFrom];
-        inputArray[changeFrom] = tempVar;
+        inputArray[changeFrom] = inputArray[changeTo];
+        inputArray[changeTo] = tempVar;
 
     }
 
